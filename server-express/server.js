@@ -1,16 +1,14 @@
 const express = require('express');
 const app = express();
 
-const port = process.env.DB_PORT || '5432';
-const host = process.env.DB_HOST || 'localhost';
 
 const { Pool } = require('pg');
 const pool = new Pool({
     user: 'postgres',
-    host: host,
+    host: 172.17.0.2,
     database: 'postgres',
     password: 'postgres',
-    port: parseInt(port),
+    port: 5432,
 })
 
 app.listen(3000, '0.0.0.0', () => {
