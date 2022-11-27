@@ -6,7 +6,7 @@ from flask import Flask
 app = Flask(__name__)
 
 def getDatabase():
-    return psycopg2.connect(database="postgres", user="postgres", password="postgres", host="localhost", port=5432)
+    return psycopg2.connect(database="postgres", user="postgres", password="postgres", host="172.17.0.2", port=5432)
 
 @app.route('/cars', methods=['GET'])
 def getCars():
